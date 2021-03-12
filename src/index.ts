@@ -1,4 +1,4 @@
-import { debug, error as logError, getInput, setFailed } from "@actions/core";
+import { getInput, setFailed } from "@actions/core";
 import { context } from "@actions/github";
 import { EventPayloads } from "@octokit/webhooks";
 
@@ -10,8 +10,7 @@ const run = async () => {
     const token = getInput("github_token", { required: true });
     const messageTemplate = getInput("message_template");
     const titleTemplate = getInput("title_template");
-    debug(JSON.stringify(context, undefined, 2));
-    const labelsInput = getInput("labels");
+    const labelsInput = getInput("add_labels");
     const labelsToAdd = getLabelsToAdd(labelsInput);
     await backport({
       labelsToAdd,
