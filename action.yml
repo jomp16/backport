@@ -1,5 +1,5 @@
-name: Backporting
-author: Thibault Derousseaux <tibdex@gmail.com>
+name: jomp16-backport
+author: Jose Olivio M. Pedrosa <root at rwx dot ovh>
 description: Automatically backport PRs to other branches by simply labeling them.
 inputs:
   add_labels:
